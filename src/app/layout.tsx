@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Apex Rotation",
+  title: "Apex Map Rotation",
   description: "Apex Legends Map Rotation Timer",
   manifest: "/site.webmanifest",
   icons: {
