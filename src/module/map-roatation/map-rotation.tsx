@@ -35,7 +35,7 @@ const MapRotation = () => {
       );
       setData(response.data);
       setLeftBgImage(response.data.battle_royale.current.asset);
-      setRightBgImage(response.data.ranked.asset);
+      setRightBgImage(response.data.ranked.current.asset);
       await preloadImages([
         response.data.battle_royale.current.asset,
         response.data.ranked.current.asset,
@@ -117,7 +117,7 @@ const MapRotation = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-black">
-      {/** Split Backgrounds */}
+      {/* Split Backgrounds */}
       <div className="fixed inset-0">
         <div className="relative h-full w-full overflow-hidden">
           <AnimatePresence>
@@ -152,7 +152,6 @@ const MapRotation = () => {
               otherSideHovered={hoveredSide === "left"}
             />
           </AnimatePresence>
-
           <motion.div
             className="absolute inset-0 left-1/2 bg-gradient-to-l from-black/80 via-black/40 to-transparent"
             animate={{
@@ -163,16 +162,20 @@ const MapRotation = () => {
                   ? "60%"
                   : "50%",
             }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            transition={{
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1],
+            }}
           />
         </div>
       </div>
-      {/**Content */}
+
+      {/* Content */}
       <div className="relative min-h-screen w-full p-4">
         <div className="mx-auto max-w-full space-y-6 px-4 lg:px-8">
-          {/**Header */}
+          {/* Header */}
           <motion.div
-            className="mb-8 flex items-center justify-center"
+            className="mb-8 flex items-center justify-between"
             initial="hidden"
             animate="visible"
             variants={titleVariants}
@@ -180,16 +183,17 @@ const MapRotation = () => {
             <div className="flex items-center gap-3">
               <motion.div variants={iconVariants}>
                 <Image
-                  src="./apex.svg"
-                  alt="apex logo"
+                  src="/apex.svg"
+                  alt="Apex Legends Logo"
                   width={28}
                   height={28}
                 />
               </motion.div>
             </div>
-            <LTMButton showLTM={showLTM} onClick={() => !setShowLTM} />
+            <LTMButton showLTM={showLTM} onClick={() => setShowLTM(!showLTM)} />
           </motion.div>
-          {/**Map Rotation */}
+
+          {/* Map Rotations */}
           <div className="flex gap-6">
             <RotationCard
               current={data.battle_royale.current}
@@ -208,7 +212,8 @@ const MapRotation = () => {
               onHoverEnd={() => setHoveredSide(null)}
             />
           </div>
-          {/** LTM Section */}
+
+          {/* LTM Section */}
           <AnimatePresence>
             {showLTM && data.ltm && (
               <motion.div
@@ -259,7 +264,7 @@ const MapRotation = () => {
             className="text-sm hover:underline"
             style={{ color: "#8fbc8f" }}
           >
-            Made with ❤️
+            Mvula 
           </Link>
         </motion.div>
       </div>

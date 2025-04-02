@@ -168,7 +168,9 @@ export const RotationCard = ({
             initial={{ width: "100%" }}
             animate={{
               width: `${
-                ((current.remainingSecs || 0) / current.DurationInSecs) * 100
+                current.DurationInSecs && current.DurationInSecs > 0
+                  ? ((current.remainingSecs || 0) / current.DurationInSecs) * 100
+                  : 0
               }%`,
             }}
             transition={{ duration: 1, ease: "linear" }}
