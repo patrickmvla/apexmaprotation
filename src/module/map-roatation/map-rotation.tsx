@@ -258,7 +258,7 @@ const MapRotation = () => {
           transition={{ delay: 0.5 }}
         >
           <Link
-            href="https://github.com/iiroan/apexrotation"
+            href="https://github.com/patrickmvla/apexmaprotation"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm hover:underline"
