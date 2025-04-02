@@ -20,37 +20,15 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico" }
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png" }
+      { url: "/favicon.ico" },
     ],
     other: [
-      { 
+      {
         rel: "mask-icon",
         url: "/apex.svg",
-        color: "#ffffff"
-      }
-    ]
-  },
-  openGraph: {
-    title: "Apex Rotation",
-    description: "Apex Legends Map Rotation Timer",
-    images: [
-      {
-        url: "https://apex.roan.dev/screenshot.png",
-        width: 1200,
-        height: 630,
-        alt: "Apex Rotation Preview",
+        color: "#ffffff",
       },
     ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Apex Rotation",
-    description: "Apex Legends Map Rotation Timer",
-    images: ["https://apex.roan.dev/screenshot.png"],
   },
 };
 
